@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.3"
    
 services:
   nemo:
@@ -12,9 +12,9 @@ services:
       - YAP_API_HOST=yap
       - YAP_API_PORT=8000
     depends_on:
-      yap:
-        condition: service_healthy
-
+      - yap
+    networks:
+      - devops
   yap:
     image: cjer/yap
     build: ./yap_docker
@@ -25,6 +25,13 @@ services:
         interval: 30s
         timeout: 10s
         retries: 10
+    networks:
+      - devops
+
+
+networks:
+        devops:
+                external: true
 # add this if you want yap available externally as well
 #    ports: 
 #      - "8000:8000"
