@@ -14,7 +14,7 @@ services:
     depends_on:
       - yap
     networks:
-      - devops
+      - bullzai-infrastructure
   yap:
     image: cjer/yap
     build: ./yap_docker
@@ -26,11 +26,11 @@ services:
         timeout: 10s
         retries: 10
     networks:
-      - devops
+      - bullzai-infrastructure
 
 
 networks:
-        devops:
+        bullzai-infrastructure:
                 external: true
 # add this if you want yap available externally as well
 #    ports: 
