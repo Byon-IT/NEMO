@@ -15,10 +15,9 @@ services:
     environment:
       - YAP_API_HOST=yap-1
       - YAP_API_PORT=8000
-    depends_on:
-      - yap
     networks:
       - bullzai-infrastructure
+
   yap-1:
     image: cjer/yap
     build: ./yap_docker
