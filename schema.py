@@ -46,7 +46,7 @@ class Morpheme(BaseModel):
     # token_id: int
     nemo_morph: Optional[str] = None
     nemo_multi_align_morph: Optional[str] = None
-    id: Optional[int]
+    id: Optional[int] = None
     lemma: Optional[str] = None
     #upostag: Optional[str] = None
     #xpostag: Optional[str] = None
